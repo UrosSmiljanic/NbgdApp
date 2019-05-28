@@ -75,7 +75,7 @@ class YearlyCalculatorResultsScreen: BaseViewController {
 
         setLabels()
 
-        userInputValue.text = numberFormatter.string(from: NSNumber(floatLiteral: Double(calculationParameters.userInput)!))!
+		userInputValue.text = numberFormatter.string(from: NSNumber(floatLiteral: Double(calculationParameters.userInput)))!
         numberOfFamilyMembersValue.text = calculationParameters.numberOfFamilyMembers
 
 
@@ -282,7 +282,7 @@ class YearlyCalculatorResultsScreen: BaseViewController {
             //            numberOfFamilyMemmbersLbl.text = String(Int(CommonValues.userInputFamily))
 
 
-            godisnjiN(neto: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100, familyNum: Double(calculationParameters.numberOfFamilyMembers)!, averageSalary: Double(calculationParameters.averageAnnualIncome)!, yearlyTaxOne: Double(calculationParameters.taxRatesAnual_1)! / 100, yearlyTaxTwo: Double(calculationParameters.taxRatesAnual_2)! / 100)
+			godisnjiN(neto: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100, familyNum: Double(calculationParameters.numberOfFamilyMembers)!, averageSalary: Double(calculationParameters.averageAnnualIncome)!, yearlyTaxOne: Double(calculationParameters.taxRatesAnual_1)! / 100, yearlyTaxTwo: Double(calculationParameters.taxRatesAnual_2)! / 100)
         case "godisnjiBone":
             if defaultLanguage == "sr" {
                 calculationType.text = "Бруто 1 месечна зарада"
@@ -293,7 +293,7 @@ class YearlyCalculatorResultsScreen: BaseViewController {
             //            amountLbl.text = String(CommonValues.userInputValue)
             //            numberOfFamilyMemmbersLbl.text = String(CommonValues.userInputFamily)
 
-           godisnjiBon(bruto: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100, familyNum: Double(calculationParameters.numberOfFamilyMembers)!, averageSalary: Double(calculationParameters.averageAnnualIncome)!, yearlyTaxOne: Double(calculationParameters.taxRatesAnual_1)! / 100, yearlyTaxTwo: Double(calculationParameters.taxRatesAnual_2)! / 100)
+			godisnjiBon(bruto: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100, familyNum: Double(calculationParameters.numberOfFamilyMembers)!, averageSalary: Double(calculationParameters.averageAnnualIncome)!, yearlyTaxOne: Double(calculationParameters.taxRatesAnual_1)! / 100, yearlyTaxTwo: Double(calculationParameters.taxRatesAnual_2)! / 100)
         case "godisnjiBtwo":
             if defaultLanguage == "sr" {
                 calculationType.text = "Бруто 2 месечна зарада"
@@ -305,7 +305,7 @@ class YearlyCalculatorResultsScreen: BaseViewController {
             //            amountLbl.text = String(CommonValues.userInputValue)
             //            numberOfFamilyMemmbersLbl.text = String(CommonValues.userInputFamily)
 
-         godisnjiBtwo(bruto: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100, familyNum: Double(calculationParameters.numberOfFamilyMembers)!, averageSalary: Double(calculationParameters.averageAnnualIncome)!, yearlyTaxOne: Double(calculationParameters.taxRatesAnual_1)! / 100, yearlyTaxTwo: Double(calculationParameters.taxRatesAnual_2)! / 100)
+			godisnjiBtwo(bruto: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100, familyNum: Double(calculationParameters.numberOfFamilyMembers)!, averageSalary: Double(calculationParameters.averageAnnualIncome)!, yearlyTaxOne: Double(calculationParameters.taxRatesAnual_1)! / 100, yearlyTaxTwo: Double(calculationParameters.taxRatesAnual_2)! / 100)
         default:
             return
         }

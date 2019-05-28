@@ -91,7 +91,7 @@ class CalculatorEarningsResults: BaseViewController {
 
         setLabels()
 
-        userInputValue.text = numberFormatter.string(from: NSNumber(floatLiteral: Double(calculationParameters.userInput)!))!
+		userInputValue.text = numberFormatter.string(from: NSNumber(floatLiteral: Double(calculationParameters.userInput)))!
 
 
         self.removeSpinner()
@@ -117,22 +117,22 @@ class CalculatorEarningsResults: BaseViewController {
             switch calculationParameters.calculationType {
             case "b2uN":
                 calculationType.text = "Бруто 2 у Нетo"
-                serbiaB2uN(bruto2: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
+				serbiaB2uN(bruto2: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
             case "bUn":
                 calculationType.text = "Бруто у Нето"
-                ugovoroDeluBuN(netAmount: Double(calculationParameters.userInput)!, insurance: calculationParameters.insurance, standardCosts: Double(calculationParameters.standardCosts)! / 100, personalIncomeTax: Double(calculationParameters.personalIncome_tax)! / 100, pensionFund: Double(calculationParameters.contributionToPensionFund)! / 100, healthFund: Double(calculationParameters.contributionToHealthFund)! / 100)
+				ugovoroDeluBuN(netAmount: Double(calculationParameters.userInput), insurance: calculationParameters.insurance, standardCosts: Double(calculationParameters.standardCosts)! / 100, personalIncomeTax: Double(calculationParameters.personalIncome_tax)! / 100, pensionFund: Double(calculationParameters.contributionToPensionFund)! / 100, healthFund: Double(calculationParameters.contributionToHealthFund)! / 100)
             case "b1uN":
                 calculationType.text = "Бруто 1 у Нетo"
-                serbiaB1uN(bruto1: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
+				serbiaB1uN(bruto1: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
             case "nUb":
                 calculationType.text = "Нето у Бруто"
-                ugovoroDeluNuB(netAmount: Double(calculationParameters.userInput)!, insurance: calculationParameters.insurance, standardCosts: Double(calculationParameters.standardCosts)! / 100, personalIncomeTax: Double(calculationParameters.personalIncome_tax)! / 100, pensionFund: Double(calculationParameters.contributionToPensionFund)! / 100, healthFund: Double(calculationParameters.contributionToHealthFund)! / 100)
+				ugovoroDeluNuB(netAmount: Double(calculationParameters.userInput), insurance: calculationParameters.insurance, standardCosts: Double(calculationParameters.standardCosts)! / 100, personalIncomeTax: Double(calculationParameters.personalIncome_tax)! / 100, pensionFund: Double(calculationParameters.contributionToPensionFund)! / 100, healthFund: Double(calculationParameters.contributionToHealthFund)! / 100)
             case "nUb1":
                 calculationType.text = "Нето у Бруто 1"
-                serbiaNuB1B2(neto: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
+				serbiaNuB1B2(neto: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
             case "nUb2":
                 calculationType.text = "Нето у Бруто 2"
-                serbiaNuB1B2(neto: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
+				serbiaNuB1B2(neto: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
             default:
                 return
             }
@@ -156,22 +156,22 @@ class CalculatorEarningsResults: BaseViewController {
             switch calculationParameters.calculationType {
             case "b2uN":
                 calculationType.text = "Gross 2 to Net"
-                serbiaB2uN(bruto2: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
+				serbiaB2uN(bruto2: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
             case "bUn":
                 calculationType.text = "Gross to Net"
-                ugovoroDeluBuN(netAmount: Double(calculationParameters.userInput)!, insurance: calculationParameters.insurance, standardCosts: Double(calculationParameters.standardCosts)! / 100, personalIncomeTax: Double(calculationParameters.personalIncome_tax)! / 100, pensionFund: Double(calculationParameters.contributionToPensionFund)! / 100, healthFund: Double(calculationParameters.contributionToHealthFund)! / 100)
+				ugovoroDeluBuN(netAmount: Double(calculationParameters.userInput), insurance: calculationParameters.insurance, standardCosts: Double(calculationParameters.standardCosts)! / 100, personalIncomeTax: Double(calculationParameters.personalIncome_tax)! / 100, pensionFund: Double(calculationParameters.contributionToPensionFund)! / 100, healthFund: Double(calculationParameters.contributionToHealthFund)! / 100)
             case "b1uN":
                 calculationType.text = "Gross 1 to Net"
-                serbiaB1uN(bruto1: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
+				serbiaB1uN(bruto1: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
             case "nUb":
                 calculationType.text = "Net to Gross"
-                ugovoroDeluNuB(netAmount: Double(calculationParameters.userInput)!, insurance: calculationParameters.insurance, standardCosts: Double(calculationParameters.standardCosts)! / 100, personalIncomeTax: Double(calculationParameters.personalIncome_tax)! / 100, pensionFund: Double(calculationParameters.contributionToPensionFund)! / 100, healthFund: Double(calculationParameters.contributionToHealthFund)! / 100)
+				ugovoroDeluNuB(netAmount: Double(calculationParameters.userInput), insurance: calculationParameters.insurance, standardCosts: Double(calculationParameters.standardCosts)! / 100, personalIncomeTax: Double(calculationParameters.personalIncome_tax)! / 100, pensionFund: Double(calculationParameters.contributionToPensionFund)! / 100, healthFund: Double(calculationParameters.contributionToHealthFund)! / 100)
             case "nUb1":
                 calculationType.text = "Net to Gross 1"
-                serbiaNuB1B2(neto: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
+				serbiaNuB1B2(neto: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
             case "nUb2":
                 calculationType.text = "Net to Gross 2"
-                serbiaNuB1B2(neto: Double(calculationParameters.userInput)!, maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
+				serbiaNuB1B2(neto: Double(calculationParameters.userInput), maxBase: Double(calculationParameters.maxBaseSocialContributions)!, nonTaxable: Double(calculationParameters.nonTaxableAmount)!, salaryTax: Double(calculationParameters.salaryTax)! / 100, socialEmployee: Double(calculationParameters.socialContributionsEmployee)! / 100, socialEmployer: Double(calculationParameters.socialContributionsEmployer)! / 100)
             default:
                 return
             }

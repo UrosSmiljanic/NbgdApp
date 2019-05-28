@@ -12,7 +12,7 @@ struct calculatorData {
     var currency = "rsd"
     var calculationType = "b1uN"
     var titleType = ""
-    var userInput = "224585.01245"
+    var userInput = 224585.01245
     var eurValue = "0"
     var insurance = "ne"
     var numberOfFamilyMembers = "0"

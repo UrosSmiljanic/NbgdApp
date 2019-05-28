@@ -462,6 +462,17 @@ class BaseViewController: UIViewController {
         secondSeperator.anchor(top: faqButton.bottomAnchor, leading: sortNewsView.leadingAnchor, bottom: nil, trailling: sortNewsView.trailingAnchor, size: .init(width: 0, height: 2))
 
     }
+	
+	func convertCurrencyToDouble(input: String) -> Double? {
+		let correctInput = input.replacingOccurrences(of: ".", with: "")
+		let formatter = NumberFormatter()
+		formatter.numberStyle = .currency
+		formatter.locale = Locale(identifier: "de_DE")
+		formatter.currencySymbol = ""
+		formatter.maximumFractionDigits = 2
+		formatter.minimumFractionDigits = 2
+		return formatter.number(from: correctInput)?.doubleValue
+	}
 
     func showSortNewsView() {
 

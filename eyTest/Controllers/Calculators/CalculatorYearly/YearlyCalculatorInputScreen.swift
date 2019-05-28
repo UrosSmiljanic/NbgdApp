@@ -71,13 +71,16 @@ class YearlyCalculatorInputScreen: BaseViewController {
         if (userInputValueTextField.text?.trimmingCharacters(in: .whitespaces) != "") && userInputFamilyMembers.text?.trimmingCharacters(in: .whitespaces) != "" {
             if calculationParameters.currency == "eur" {
                 if let userInput = userInputValueTextField.text, let eurValue = eurValueTextField.text {
-                    let result = Double(userInput)! * Double(eurValue)!
-                    calculationParameters.userInput = String(result)
+					let result = (convertCurrencyToDouble(input: userInput) ?? 0.0) * (convertCurrencyToDouble(input: eurValue) ?? 0.0)
+                    calculationParameters.userInput = result
                 }
             } else {
-                if let userInput = userInputValueTextField.text {
-                    calculationParameters.userInput = userInput
-                }
+				
+				if let input = userInputValueTextField.text {
+					calculationParameters.userInput = convertCurrencyToDouble(input: input) ?? 0.00
+				} else {
+					print("error")
+				}
 
             }
 
@@ -236,16 +239,16 @@ class YearlyCalculatorInputScreen: BaseViewController {
     }
 
     @objc func textFieldValDidChange(_ textField: UITextField) {
-
-//        if textField.text!.count >= 1 {
-//            if let input = textField.text {
-//                let number = Double(input.replacingOccurrences(of: ",", with: ""))
-////                let result = numberFormatter.string(from: NSNumber(value: number!))
-////                textField.text = result!
-//            }
-//
-//        }
+		if let amountString = userInputValueTextField.text?.currencyInputFormatting() {
+			userInputValueTextField.text = amountString
+		}
     }
+	
+	@objc func textFieldEurDidChange(_ textField: UITextField) {
+		if let amountString = eurValueTextField.text?.currencyInputFormatting() {
+			eurValueTextField.text = amountString
+		}
+	}
 
     let userInputValueTextField: UITextField = {
         let textField = UITextField()
@@ -255,7 +258,7 @@ class YearlyCalculatorInputScreen: BaseViewController {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.adjustsFontSizeToFitWidth = true
         textField.keyboardType = .numbersAndPunctuation
-        // textField.addTarget(self, action:#selector(textFieldValDidChange), for: .editingChanged)
+		textField.addTarget(self, action:#selector(textFieldValDidChange), for: .editingChanged)
 
         return textField
     }()
@@ -280,6 +283,7 @@ class YearlyCalculatorInputScreen: BaseViewController {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.adjustsFontSizeToFitWidth = true
         textField.keyboardType = .numbersAndPunctuation
+		textField.addTarget(self, action:#selector(textFieldEurDidChange), for: .editingChanged)
 
         return textField
     }()
